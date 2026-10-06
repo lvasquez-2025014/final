@@ -101,9 +101,9 @@ echo " --> EJECUTANDO PRUEBA DE ESTRÉS EN CONSULTA DE AGENDA"
 echo "=========================================="
 
 if command -v ab &> /dev/null; then
-  ab -n 500 -c 50 -H "Authorization: Bearer $ADMIN_TOKEN" "$BASE_URL/citas/agenda?fecha=2026-10-06"
+  ab -n 1000 -c 50 -H "Authorization: Bearer $ADMIN_TOKEN" "$BASE_URL/citas/agenda?fecha=2026-10-06"
 else
-  seq 100 | xargs -n 1 -P 10 -I {} curl -s -o /dev/null -w "%{http_code}\n" \
+  seq 1000 | xargs -P 20 -I {} curl -s -o /dev/null -w "%{http_code}\n" \
     -X GET "$BASE_URL/citas/agenda?fecha=2026-10-06" \
     -H "Authorization: Bearer $ADMIN_TOKEN" | sort | uniq -c
 fi
