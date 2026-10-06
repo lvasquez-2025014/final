@@ -31,3 +31,7 @@ build/
 
 ### VS Code ###
 .vscode/
+
+### Shell scripts de prueba ###
+*.sh
+src/main/resources/*.sh
