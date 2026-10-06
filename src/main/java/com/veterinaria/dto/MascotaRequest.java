@@ -1,6 +1,7 @@
 package com.veterinaria.dto;
 
 import com.veterinaria.entity.Especie;
+import jakarta.validation.constraints.DecimalMin;
 import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
@@ -8,6 +9,8 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+
+import java.math.BigDecimal;
 
 @Data
 @NoArgsConstructor
@@ -29,4 +32,7 @@ public class MascotaRequest {
 
     // Opcional: si un ADMIN registra la mascota para un cliente específico
     private Long clienteId;
+
+    @DecimalMin(value = "0.0", inclusive = false, message = "El peso debe ser mayor a 0")
+    private BigDecimal pesoKg;
 }

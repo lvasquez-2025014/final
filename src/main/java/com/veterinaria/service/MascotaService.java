@@ -52,6 +52,7 @@ public class MascotaService implements IMascotaService {
                 .nombre(request.getNombre().trim())
                 .especie(request.getEspecie())
                 .raza(request.getRaza() != null ? request.getRaza().trim() : null)
+                .pesoKg(request.getPesoKg())
                 .edad(request.getEdad())
                 .cliente(duenoMascota)
                 .build();
@@ -75,6 +76,7 @@ public class MascotaService implements IMascotaService {
                 .especie(mascota.getEspecie())
                 .raza(mascota.getRaza())
                 .edad(mascota.getEdad())
+                .pesoKg(mascota.getPesoKg())
                 .clienteId(mascota.getCliente().getId())
                 .clienteNombre(mascota.getCliente().getNombre())
                 .clienteEmail(mascota.getCliente().getEmail())

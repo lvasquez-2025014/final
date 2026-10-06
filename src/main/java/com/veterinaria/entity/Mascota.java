@@ -3,6 +3,8 @@ package com.veterinaria.entity;
 import jakarta.persistence.*;
 import lombok.*;
 
+import java.math.BigDecimal;
+
 @Entity
 @Table(name = "mascotas")
 @Data
@@ -27,6 +29,9 @@ public class Mascota {
 
     @Column(nullable = false)
     private Integer edad;
+
+    @Column(name = "peso_kg", precision = 6, scale = 2)
+    private BigDecimal pesoKg;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "cliente_id", nullable = false)

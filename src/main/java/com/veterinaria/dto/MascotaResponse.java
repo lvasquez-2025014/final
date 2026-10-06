@@ -6,6 +6,8 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.math.BigDecimal;
+
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
@@ -17,6 +19,7 @@ public class MascotaResponse {
     private Especie especie;
     private String raza;
     private Integer edad;
+    private BigDecimal pesoKg;
     private Long clienteId;
     private String clienteNombre;
     private String clienteEmail;
